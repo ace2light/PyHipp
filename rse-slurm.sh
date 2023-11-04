@@ -5,7 +5,10 @@
 #SBATCH --time=24:00:00   # walltime
 #SBATCH --ntasks=1   # number of processor cores (i.e. tasks)
 #SBATCH --nodes=1   # number of nodes
+<<<<<<< HEAD
 #SBATCH --cpus-per-task=1      # number of processors per task
+=======
+>>>>>>> upstream/main
 #SBATCH -J "rse"   # job name
 
 ## /SBATCH -p general # partition (queue)
@@ -13,6 +16,7 @@
 #SBATCH -e rse-slurm.%N.%j.err # STDERR
 
 # LOAD MODULES, INSERT CODE, AND RUN YOUR PROGRAMS HERE
+<<<<<<< HEAD
 python -u -c "import PyHipp as pyh; \
 import time; \
 import os; \
@@ -23,3 +27,6 @@ pyh.RPLSplit(SkipLFP=False, SkipHighPass=False); \
 print(time.localtime()); \
 print(time.time()-t0);"
 
+=======
+python -u -c "import PyHipp as pyh; import DataProcessingTools as DPT; import time; import os; t0 = time.time(); print(time.localtime()); os.chdir('sessioneye'); pyh.RPLSplit(SkipLFP=False, SkipHighPass=False); print(time.localtime()); print(time.time()-t0);"
+>>>>>>> upstream/main

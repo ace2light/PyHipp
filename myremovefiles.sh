@@ -4,7 +4,7 @@ find . -name "*.hkl" -or -name "*.csv" | xargs rm
 
 find . -name "*slurm*err" -or -name "*slurm*out" | xargs rm
 
-rm -r mountains
+rm -r mountains missingData.csv
 
 cd session01
 
